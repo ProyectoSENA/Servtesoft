@@ -1,0 +1,909 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel"
+  dslVersion="1.0.0.0"
+  Id="6fb923b1-ee3e-4dd6-8f34-47e49f5a5b5f"
+  name="ProyectoSENA" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <ownedCommentsInternal>
+    <comment
+      Id="4a27a696-a2f2-4e90-9a21-d1986d6ee65a">
+      <body>Se cambia el estado de la agenda, se cierra el servicio y se crea la factrura
+</body>
+      <annotatedElements>
+        <useCaseMoniker
+          Id="ec9a024f-e6cd-430c-b736-e775c4d23a39"
+          LastKnownName="Administrar Agenda de servicios"
+          LastKnownLocation="ProyectoSENA.uml" />
+      </annotatedElements>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
+      <profileInstance
+        Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791"
+        name="StandardProfileL2" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="29349502-908c-4fda-9054-c48619c59ed0">
+      <profileInstance
+        Id="532ea607-fb19-44b8-8502-3351b05452be"
+        name="StandardProfileL3" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <actor
+        Id="61a27466-3ce6-4336-b54a-e8b2434b41f0"
+        name="Cliente Esporadico"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="ebe3860c-4c4e-436e-a232-df993e1c007a"
+            isDerived="false"
+            sourceEndRoleName="Usuario"
+            targetEndRoleName="Consulta General"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="edf0fee9-0132-4aaa-9799-9a54b40c30e6"
+              LastKnownName="Realizar Consulta General"
+              LastKnownLocation="ProyectoSENA.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="2de5a0cd-6f85-4582-9a58-702ea9bf1b39"
+                  name="Usuario"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="fafeedfb-1b44-477b-89f4-46edd6b8c8f1"
+                  name="Consulta General"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="6189739d-a213-4a5b-88fe-1287630d3ebe"
+            isDerived="false"
+            sourceEndRoleName="Cliente Esporadico"
+            targetEndRoleName="Calificar Servicio"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="09051b07-bc89-4f4e-b6a1-2fc21d4e3044"
+              LastKnownName="Calificar Servicio"
+              LastKnownLocation="ProyectoSENA.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="cd086dbf-aeae-43c7-935b-8c8afe63a570"
+                  name="Cliente Esporadico"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="a8f29f84-b3a9-40a3-9936-f86cb5630ae8"
+                  name="Calificar Servicio"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <subsystem
+        Id="f8c64fc9-db9c-4f0b-bdd6-273e6b4c5f1d"
+        name="Inicio"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="edf0fee9-0132-4aaa-9799-9a54b40c30e6"
+        name="Realizar Consulta General"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="56c52b1e-4e7d-4800-9236-87db207891a6">
+            <useCaseMoniker
+              Id="f1447027-c8b7-450e-8123-7bdb35e7e26c"
+              LastKnownName="Generar Solicitud"
+              LastKnownLocation="ProyectoSENA.uml" />
+          </dependency>
+        </suppliersInternal>
+        <subjects>
+          <subsystemMoniker
+            Id="f8c64fc9-db9c-4f0b-bdd6-273e6b4c5f1d"
+            LastKnownName="Inicio"
+            LastKnownLocation="ProyectoSENA.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="f1447027-c8b7-450e-8123-7bdb35e7e26c"
+        name="Generar Solicitud"
+        isAbstract="false"
+        isLeaf="false">
+        <additions>
+          <include
+            Id="828ad0a7-4844-4201-a4c6-950b950701a5">
+            <useCaseMoniker
+              Id="f50bf80a-4520-4c3e-a196-4966f89abb0d"
+              LastKnownName="Notificacion de solucitud  nn"
+              LastKnownLocation="ProyectoSENA.uml" />
+          </include>
+        </additions>
+        <subjects>
+          <subsystemMoniker
+            Id="f8c64fc9-db9c-4f0b-bdd6-273e6b4c5f1d"
+            LastKnownName="Inicio"
+            LastKnownLocation="ProyectoSENA.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="09051b07-bc89-4f4e-b6a1-2fc21d4e3044"
+        name="Calificar Servicio"
+        isAbstract="false"
+        isLeaf="false">
+        <additions>
+          <include
+            Id="bcfbe771-f562-4196-aa21-3fcb0db30d48">
+            <useCaseMoniker
+              Id="f93a23d4-f8fa-4b6b-9911-8d4a560114a7"
+              LastKnownName="Ver calidad de servicio"
+              LastKnownLocation="ProyectoSENA.uml" />
+          </include>
+        </additions>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="350b66ec-ce3d-4761-b1b3-3619647ed1a8"
+        name="UseCase1"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <subsystem
+        Id="9bc00a4a-3371-4ada-a7ee-25126a340ff0"
+        name="Agenda"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="f50bf80a-4520-4c3e-a196-4966f89abb0d"
+        name="Notificacion de solucitud  nn"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="59aaed83-3674-40c7-9793-c4600a06da98"
+            isDerived="false"
+            sourceEndRoleName="Notificacion"
+            targetEndRoleName="ServTesoft"
+            isLeaf="false"
+            isAbstract="false">
+            <actorMoniker
+              Id="82fbf6ca-b53d-43e7-804c-de116f60b11b"
+              LastKnownName="ServTesoft"
+              LastKnownLocation="ProyectoSENA.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="2b722a01-9bae-4149-8b2e-dab335c7a5d6"
+                  name="Notificacion"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="8e21034e-4a44-437e-a6c9-df141a856fd5"
+                  name="ServTesoft"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <subjects>
+          <subsystemMoniker
+            Id="f8c64fc9-db9c-4f0b-bdd6-273e6b4c5f1d"
+            LastKnownName="Inicio"
+            LastKnownLocation="ProyectoSENA.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="ff3f7b2c-961a-4674-9246-897c9755bc5b"
+        name="Crear Agenda de servicios"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="f6e9897d-b87f-4c9e-9628-a9e6a2a6a193">
+            <useCaseMoniker
+              Id="ec9a024f-e6cd-430c-b736-e775c4d23a39"
+              LastKnownName="Administrar Agenda de servicios"
+              LastKnownLocation="ProyectoSENA.uml" />
+          </dependency>
+        </suppliersInternal>
+        <subjects>
+          <subsystemMoniker
+            Id="9bc00a4a-3371-4ada-a7ee-25126a340ff0"
+            LastKnownName="Agenda"
+            LastKnownLocation="ProyectoSENA.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="82fbf6ca-b53d-43e7-804c-de116f60b11b"
+        name="ServTesoft"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="0071eec7-c05a-48b1-983b-dd53ed1eddd0"
+            isDerived="false"
+            sourceEndRoleName="ServTesoft"
+            targetEndRoleName="Logeo de usuario"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="ab090211-7791-444c-9cc5-d79b25cf81e7"
+              LastKnownName="Logeo de Administrador"
+              LastKnownLocation="ProyectoSENA.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="e35a1fbf-957a-416b-8677-1a2ff12d4b76"
+                  name="ServTesoft"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="2014a35f-daad-4a1c-ae7d-e6a1a4c308e4"
+                  name="Logeo de usuario"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="96b4b385-e59c-4fb3-9eec-4c76e4cb51d4"
+            isDerived="false"
+            sourceEndRoleName="ServTesoft"
+            targetEndRoleName="Logeo Administrador"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="a49f689a-f040-46ca-9b65-bf0ebc7be1b2"
+              LastKnownName="Logeo Administrador"
+              LastKnownLocation="ProyectoSENA.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="9c660855-04b8-4256-ac1d-b275a930f8c9"
+                  name="ServTesoft"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="5c5d830c-c33d-40aa-8ccf-efc6b61e0e8f"
+                  name="Logeo Administrador"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="5023e6c8-d791-462c-a6f3-5d750313bc40"
+            isDerived="false"
+            sourceEndRoleName="ServTesoft"
+            targetEndRoleName="Logeo Administrador"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="9e14fd42-f85f-4775-88da-599a426bb9f4"
+              LastKnownName="Logeo Administrador"
+              LastKnownLocation="ProyectoSENA.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="52c76c06-c4d2-4d06-acb6-94bbf5e9b66e"
+                  name="ServTesoft"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="29b098c4-69da-49c3-bd8f-09b30451c04a"
+                  name="Logeo Administrador"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="ec9a024f-e6cd-430c-b736-e775c4d23a39"
+        name="Administrar Agenda de servicios"
+        isAbstract="false"
+        isLeaf="false">
+        <additions>
+          <include
+            Id="734c0195-ab0a-4a26-8b42-40494b8b9822">
+            <useCaseMoniker
+              Id="156cfdf9-6cb8-4c5b-8f1f-f705310d7a0b"
+              LastKnownName="Crear Factura del cliente"
+              LastKnownLocation="ProyectoSENA.uml" />
+          </include>
+        </additions>
+        <subjects>
+          <subsystemMoniker
+            Id="9bc00a4a-3371-4ada-a7ee-25126a340ff0"
+            LastKnownName="Agenda"
+            LastKnownLocation="ProyectoSENA.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="c15c5b6e-2df9-460a-b6cd-cbfa98018d06"
+        name="Confirmacion de solicitud de servicio"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="314e69f5-cbe3-4906-87b1-5bb39afc6d86"
+            isDerived="false"
+            sourceEndRoleName="Confirmacion"
+            targetEndRoleName="Usuario"
+            isLeaf="false"
+            isAbstract="false">
+            <actorMoniker
+              Id="61a27466-3ce6-4336-b54a-e8b2434b41f0"
+              LastKnownName="Cliente Esporadico"
+              LastKnownLocation="ProyectoSENA.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="ac168c8e-607b-4451-bd06-ef6c4363d7d0"
+                  name="Confirmacion"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="35c66ed6-421e-4f10-b308-e9b99bfb5e69"
+                  name="Usuario"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <additions>
+          <include
+            Id="06ccf251-fff8-41fe-9a64-5b35e9d88bb1">
+            <useCaseMoniker
+              Id="ff3f7b2c-961a-4674-9246-897c9755bc5b"
+              LastKnownName="Crear Agenda de servicios"
+              LastKnownLocation="ProyectoSENA.uml" />
+          </include>
+        </additions>
+        <subjects>
+          <subsystemMoniker
+            Id="9bc00a4a-3371-4ada-a7ee-25126a340ff0"
+            LastKnownName="Agenda"
+            LastKnownLocation="ProyectoSENA.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <subsystem
+        Id="d1b70e18-9544-44db-936f-f9190d623b21"
+        name="Facturacion"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="156cfdf9-6cb8-4c5b-8f1f-f705310d7a0b"
+        name="Crear Factura del cliente"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="fa479563-87dc-4069-bc50-c9aeb95d45c8">
+            <useCaseMoniker
+              Id="cf46265b-e39b-444e-abaf-65206fea1a18"
+              LastKnownName="Administrar factura del cliente"
+              LastKnownLocation="ProyectoSENA.uml" />
+          </dependency>
+        </suppliersInternal>
+        <subjects>
+          <subsystemMoniker
+            Id="3e00be1d-47fd-49c8-97f5-e43dc00739c7"
+            LastKnownName="Facturacion"
+            LastKnownLocation="ProyectoSENA.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="cf46265b-e39b-444e-abaf-65206fea1a18"
+        name="Administrar factura del cliente"
+        isAbstract="false"
+        isLeaf="false">
+        <additions>
+          <include
+            Id="7cce634d-d2ae-4c47-8a26-1b9f95768468">
+            <useCaseMoniker
+              Id="3e4d7938-621c-4744-9b61-79072f262620"
+              LastKnownName="Notificacion de facturas por vencer"
+              LastKnownLocation="ProyectoSENA.uml" />
+          </include>
+        </additions>
+        <subjects>
+          <subsystemMoniker
+            Id="3e00be1d-47fd-49c8-97f5-e43dc00739c7"
+            LastKnownName="Facturacion"
+            LastKnownLocation="ProyectoSENA.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="ab090211-7791-444c-9cc5-d79b25cf81e7"
+        name="Logeo de Administrador"
+        isAbstract="false"
+        isLeaf="false">
+        <additions>
+          <include
+            Id="a803b09a-b078-413f-a4b7-b9ffb00c02b3">
+            <useCaseMoniker
+              Id="cf46265b-e39b-444e-abaf-65206fea1a18"
+              LastKnownName="Administrar factura del cliente"
+              LastKnownLocation="ProyectoSENA.uml" />
+          </include>
+        </additions>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="f93a23d4-f8fa-4b6b-9911-8d4a560114a7"
+        name="Ver calidad de servicio"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="a2b17810-7352-4905-b033-93fee6f0c207"
+        name="Administracion de entrada y salida de existencias"
+        isAbstract="false"
+        isLeaf="false">
+        <additions>
+          <include
+            Id="4039896f-3a4b-45fa-8cf1-20df5a000f96">
+            <useCaseMoniker
+              Id="adb0b9f6-91ee-420a-a3ef-c753e76350a6"
+              LastKnownName="Notificacion de exitencias"
+              LastKnownLocation="ProyectoSENA.uml" />
+          </include>
+        </additions>
+        <subjects>
+          <subsystemMoniker
+            Id="7c416881-b66b-4ccd-ade1-7e6cb9c182ca"
+            LastKnownName="Administracion de Existencias"
+            LastKnownLocation="ProyectoSENA.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="a49f689a-f040-46ca-9b65-bf0ebc7be1b2"
+        name="Logeo Administrador"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="f4c29253-d670-4aca-bb32-8e7ee7480b59">
+            <useCaseMoniker
+              Id="cf46265b-e39b-444e-abaf-65206fea1a18"
+              LastKnownName="Administrar factura del cliente"
+              LastKnownLocation="ProyectoSENA.uml" />
+          </dependency>
+          <dependency
+            Id="12a583b2-7132-4934-bb69-2f2059fc3d64">
+            <useCaseMoniker
+              Id="c15c5b6e-2df9-460a-b6cd-cbfa98018d06"
+              LastKnownName="Confirmacion de solicitud de servicio"
+              LastKnownLocation="ProyectoSENA.uml" />
+          </dependency>
+        </suppliersInternal>
+        <subjects>
+          <subsystemMoniker
+            Id="9bc00a4a-3371-4ada-a7ee-25126a340ff0"
+            LastKnownName="Agenda"
+            LastKnownLocation="ProyectoSENA.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <subsystem
+        Id="7c416881-b66b-4ccd-ade1-7e6cb9c182ca"
+        name="Administracion de Existencias"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="9e14fd42-f85f-4775-88da-599a426bb9f4"
+        name="Logeo Administrador"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="313652c8-507e-496b-a266-2c9cbf8fc70f">
+            <useCaseMoniker
+              Id="a2b17810-7352-4905-b033-93fee6f0c207"
+              LastKnownName="Administracion de entrada y salida de existencias"
+              LastKnownLocation="ProyectoSENA.uml" />
+          </dependency>
+          <dependency
+            Id="98dc37b3-0a46-4205-8494-828ea8ea90c6">
+            <useCaseMoniker
+              Id="2e8c921a-02d4-443a-9e42-20ec99043392"
+              LastKnownName="Confirmacion de solicitud de producto"
+              LastKnownLocation="ProyectoSENA.uml" />
+          </dependency>
+        </suppliersInternal>
+        <subjects>
+          <subsystemMoniker
+            Id="7c416881-b66b-4ccd-ade1-7e6cb9c182ca"
+            LastKnownName="Administracion de Existencias"
+            LastKnownLocation="ProyectoSENA.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="3e4d7938-621c-4744-9b61-79072f262620"
+        name="Notificacion de facturas por vencer"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="4d01f7e5-d156-43f0-b912-7bdc855ca7c9"
+            isDerived="false"
+            sourceEndRoleName="Notificacion de facturas por vencer"
+            targetEndRoleName="ServTesoft"
+            isLeaf="false"
+            isAbstract="false">
+            <actorMoniker
+              Id="82fbf6ca-b53d-43e7-804c-de116f60b11b"
+              LastKnownName="ServTesoft"
+              LastKnownLocation="ProyectoSENA.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="af1ff911-35a6-4088-8d36-ddd10ee1b2e8"
+                  name="Notificacion de facturas por vencer"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="58a3f08a-ea1c-4ae0-a3fd-42c8d45b2e6b"
+                  name="ServTesoft"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <subjects>
+          <subsystemMoniker
+            Id="3e00be1d-47fd-49c8-97f5-e43dc00739c7"
+            LastKnownName="Facturacion"
+            LastKnownLocation="ProyectoSENA.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="adb0b9f6-91ee-420a-a3ef-c753e76350a6"
+        name="Notificacion de exitencias"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="a6510166-f66f-4ea7-92c3-9c6e17322f07"
+            isDerived="false"
+            sourceEndRoleName="Notificacion de esxitencias"
+            targetEndRoleName="ServTesoft"
+            isLeaf="false"
+            isAbstract="false">
+            <actorMoniker
+              Id="82fbf6ca-b53d-43e7-804c-de116f60b11b"
+              LastKnownName="ServTesoft"
+              LastKnownLocation="ProyectoSENA.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="cd0e7e88-aa65-4439-befa-49132ad5ba59"
+                  name="Notificacion de esxitencias"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="e3212f9c-21d7-4e62-b456-69d808fc5aa1"
+                  name="ServTesoft"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <subjects>
+          <subsystemMoniker
+            Id="7c416881-b66b-4ccd-ade1-7e6cb9c182ca"
+            LastKnownName="Administracion de Existencias"
+            LastKnownLocation="ProyectoSENA.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <subsystem
+        Id="3e00be1d-47fd-49c8-97f5-e43dc00739c7"
+        name="Facturacion"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="c2c0d006-97da-4e39-a838-2d78c092861e"
+        name="UseCase2"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="2e8c921a-02d4-443a-9e42-20ec99043392"
+        name="Confirmacion de solicitud de producto"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="d2e9efdd-2efc-44bd-aaae-a46593dddb1d">
+            <useCaseMoniker
+              Id="313fef78-3bcf-4035-af5f-0442383aadcb"
+              LastKnownName="Confirmacion de venta de producto"
+              LastKnownLocation="ProyectoSENA.uml" />
+          </dependency>
+        </suppliersInternal>
+        <targetEnds>
+          <association
+            Id="c463ed5d-afa7-4841-8deb-d291bc89c509"
+            isDerived="false"
+            sourceEndRoleName="Confirmar venta de producto"
+            targetEndRoleName="Cliente Esporadico"
+            isLeaf="false"
+            isAbstract="false">
+            <actorMoniker
+              Id="61a27466-3ce6-4336-b54a-e8b2434b41f0"
+              LastKnownName="Cliente Esporadico"
+              LastKnownLocation="ProyectoSENA.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="9663392e-435a-484c-9ce8-f97538e4d687"
+                  name="Confirmar venta de producto"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="f1398f90-a85d-4495-8f5b-4f4149fc06f5"
+                  name="Cliente Esporadico"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <subjects>
+          <subsystemMoniker
+            Id="7c416881-b66b-4ccd-ade1-7e6cb9c182ca"
+            LastKnownName="Administracion de Existencias"
+            LastKnownLocation="ProyectoSENA.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="313fef78-3bcf-4035-af5f-0442383aadcb"
+        name="Confirmacion de venta de producto"
+        isAbstract="false"
+        isLeaf="false">
+        <additions>
+          <include
+            Id="557349af-a662-4f10-b3e2-8686fadfc99f">
+            <useCaseMoniker
+              Id="a2b17810-7352-4905-b033-93fee6f0c207"
+              LastKnownName="Administracion de entrada y salida de existencias"
+              LastKnownLocation="ProyectoSENA.uml" />
+          </include>
+          <include
+            Id="561c3818-03b2-416b-8a3c-a26c02e0e273">
+            <useCaseMoniker
+              Id="156cfdf9-6cb8-4c5b-8f1f-f705310d7a0b"
+              LastKnownName="Crear Factura del cliente"
+              LastKnownLocation="ProyectoSENA.uml" />
+          </include>
+        </additions>
+        <subjects>
+          <subsystemMoniker
+            Id="7c416881-b66b-4ccd-ade1-7e6cb9c182ca"
+            LastKnownName="Administracion de Existencias"
+            LastKnownLocation="ProyectoSENA.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+  </packagedElements>
+  <primitiveType
+    Id="220a3521-e091-4221-bae9-3ef9018e845c"
+    name="Integer"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+    name="Boolean"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+    name="String"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="3ab42e7d-4969-445a-b209-471f5cb8209c"
+    name="UnlimitedNatural"
+    isAbstract="false"
+    isLeaf="false" />
+</modelStoreModel>

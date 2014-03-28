@@ -1,0 +1,408 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="ea717dc6-f1ba-4802-869a-44ea7f19fbd5" name="ServTesoft" linkedPackageId="acfe063e-0ff0-4cad-a644-c5faaddff449" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <ownedCommentsInternal>
+    <comment Id="bcd0faca-7da5-4f27-8ed4-b9323ab74938">
+      <elementDefinition Id="4a27a696-a2f2-4e90-9a21-d1986d6ee65a" />
+      <body>Se cambia el estado de la agenda, se cierra el servicio y se crea la factrura
+</body>
+      <annotatedElements>
+        <useCaseMoniker Id="dcc37f94-416e-4152-b538-2c335cf2cf5b" LastKnownName="Administrar Agenda de servicios" />
+      </annotatedElements>
+    </comment>
+  </ownedCommentsInternal>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="a6745e40-f35d-4200-a81a-a78b210fd9b8" name="Cliente Esporadico" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="61a27466-3ce6-4336-b54a-e8b2434b41f0" />
+        <targetEnds>
+          <association Id="867818c3-81fe-48c9-a4f8-6b0cf0d4bd5f" isDerived="false" sourceEndRoleName="Usuario" targetEndRoleName="Consulta General" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="d40b9522-6bd7-4a82-8363-d246ab6f8872" LastKnownName="Realizar Consulta General" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="70604910-87c1-4ab1-92b2-adcda6d362f3" name="Usuario" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="2de5a0cd-6f85-4582-9a58-702ea9bf1b39" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="532a4bc6-235e-4800-8299-5092612180d1" name="Consulta General" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="fafeedfb-1b44-477b-89f4-46edd6b8c8f1" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="ebe3860c-4c4e-436e-a232-df993e1c007a" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <subsystem Id="98000d05-ddf7-46b4-9130-cf64b88e145e" name="Inicio" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="f8c64fc9-db9c-4f0b-bdd6-273e6b4c5f1d" />
+      </subsystem>
+    </useCaseModelRootHasTypes>
+    <packageHasNamedElement>
+      <useCase Id="d40b9522-6bd7-4a82-8363-d246ab6f8872" name="Realizar Consulta General" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="edf0fee9-0132-4aaa-9799-9a54b40c30e6" />
+        <suppliersInternal>
+          <dependency Id="dda8fc26-662d-4343-9cb0-a1412c2d2a26">
+            <useCaseMoniker Id="db0cadca-8d60-4bf6-bc84-f59f34c6aea6" LastKnownName="Generar Solicitud" />
+            <elementDefinition Id="56c52b1e-4e7d-4800-9236-87db207891a6" />
+          </dependency>
+        </suppliersInternal>
+        <subjects>
+          <subsystemMoniker Id="98000d05-ddf7-46b4-9130-cf64b88e145e" LastKnownName="Inicio" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="db0cadca-8d60-4bf6-bc84-f59f34c6aea6" name="Generar Solicitud" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="f1447027-c8b7-450e-8123-7bdb35e7e26c" />
+        <additions>
+          <include Id="a3a6c990-d26d-4955-8c45-539c99f4cf2f">
+            <useCaseMoniker Id="ae4031e2-be8d-4456-84de-feee797daae4" LastKnownName="Notificacion de solucitud  nn" />
+            <elementDefinition Id="828ad0a7-4844-4201-a4c6-950b950701a5" />
+          </include>
+        </additions>
+        <subjects>
+          <subsystemMoniker Id="98000d05-ddf7-46b4-9130-cf64b88e145e" LastKnownName="Inicio" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <useCaseModelRootHasTypes>
+      <subsystem Id="7dbf95c5-898d-4e40-8307-3e6988dc1281" name="Agenda" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="9bc00a4a-3371-4ada-a7ee-25126a340ff0" />
+      </subsystem>
+    </useCaseModelRootHasTypes>
+    <packageHasNamedElement>
+      <useCase Id="ae4031e2-be8d-4456-84de-feee797daae4" name="Notificacion de solucitud  nn" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="f50bf80a-4520-4c3e-a196-4966f89abb0d" />
+        <targetEnds>
+          <association Id="cf330d6c-b421-40b2-8b24-f4c6691fc38a" isDerived="false" sourceEndRoleName="Notificacion" targetEndRoleName="ServTesoft" isLeaf="false" isAbstract="false">
+            <actorMoniker Id="fc888944-050c-4b07-b6c8-f468c2fb1b9c" LastKnownName="ServTesoft" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f6aae4a3-f9ee-416b-a473-6f21f6c44e0a" name="Notificacion" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="2b722a01-9bae-4149-8b2e-dab335c7a5d6" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="47934347-a7fd-4f31-84ee-ea0bccd1ee2b" name="ServTesoft" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="8e21034e-4a44-437e-a6c9-df141a856fd5" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="59aaed83-3674-40c7-9793-c4600a06da98" />
+          </association>
+        </targetEnds>
+        <subjects>
+          <subsystemMoniker Id="98000d05-ddf7-46b4-9130-cf64b88e145e" LastKnownName="Inicio" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="208e304a-f868-4e7b-ace6-b82fb12da3e5" name="Crear Agenda de servicios" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="ff3f7b2c-961a-4674-9246-897c9755bc5b" />
+        <suppliersInternal>
+          <dependency Id="2cd25964-a9d0-420e-8d84-60c90db74786">
+            <useCaseMoniker Id="dcc37f94-416e-4152-b538-2c335cf2cf5b" LastKnownName="Administrar Agenda de servicios" />
+            <elementDefinition Id="f6e9897d-b87f-4c9e-9628-a9e6a2a6a193" />
+          </dependency>
+        </suppliersInternal>
+        <subjects>
+          <subsystemMoniker Id="7dbf95c5-898d-4e40-8307-3e6988dc1281" LastKnownName="Agenda" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <useCaseModelRootHasTypes>
+      <actor Id="fc888944-050c-4b07-b6c8-f468c2fb1b9c" name="ServTesoft" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="82fbf6ca-b53d-43e7-804c-de116f60b11b" />
+        <targetEnds>
+          <association Id="9cdb9705-8168-4207-a2af-87b05a1e6660" isDerived="false" sourceEndRoleName="ServTesoft" targetEndRoleName="Logeo Administrador" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="2b1dd8e7-ebe0-4972-842f-1a27d112bae8" LastKnownName="Logeo Administrador" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="5a203dc7-6054-4f12-9b2b-b691b2c227ac" name="ServTesoft" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="9c660855-04b8-4256-ac1d-b275a930f8c9" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="5693a4b4-64cf-4e0a-9fef-d3ae42875a37" name="Logeo Administrador" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="5c5d830c-c33d-40aa-8ccf-efc6b61e0e8f" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="96b4b385-e59c-4fb3-9eec-4c76e4cb51d4" />
+          </association>
+          <association Id="4161c06b-bc70-4cce-88e7-027ee28786f1" isDerived="false" sourceEndRoleName="ServTesoft" targetEndRoleName="Logeo Administrador" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="acbf1cc7-a17d-4613-abbd-a8f0ef66c177" LastKnownName="Logeo Administrador" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="cc71889e-9ce1-4f64-b975-464726bd0653" name="ServTesoft" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="52c76c06-c4d2-4d06-acb6-94bbf5e9b66e" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="67c74d5a-2fc6-46ac-b7b1-63cc6ed0dbea" name="Logeo Administrador" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="29b098c4-69da-49c3-bd8f-09b30451c04a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="5023e6c8-d791-462c-a6f3-5d750313bc40" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <packageHasNamedElement>
+      <useCase Id="dcc37f94-416e-4152-b538-2c335cf2cf5b" name="Administrar Agenda de servicios" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="ec9a024f-e6cd-430c-b736-e775c4d23a39" />
+        <additions>
+          <include Id="f613a7d9-7d41-4e0c-82a8-8a6c01c4ca9d">
+            <useCaseMoniker Id="f9fd30eb-18f7-48d5-b967-fe686bdd4b5d" LastKnownName="Crear Factura del cliente" />
+            <elementDefinition Id="734c0195-ab0a-4a26-8b42-40494b8b9822" />
+          </include>
+        </additions>
+        <subjects>
+          <subsystemMoniker Id="7dbf95c5-898d-4e40-8307-3e6988dc1281" LastKnownName="Agenda" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="2bd72572-3f02-48bc-9c39-f49aca1631a7" name="Confirmacion de solicitud de servicio" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="c15c5b6e-2df9-460a-b6cd-cbfa98018d06" />
+        <targetEnds>
+          <association Id="8e21cf02-9cea-4379-9222-f7c427e9c43e" isDerived="false" sourceEndRoleName="Confirmacion" targetEndRoleName="Usuario" isLeaf="false" isAbstract="false">
+            <actorMoniker Id="a6745e40-f35d-4200-a81a-a78b210fd9b8" LastKnownName="Cliente Esporadico" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="74c8f019-ca19-40b8-a77f-aa6426c0b7e8" name="Confirmacion" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="ac168c8e-607b-4451-bd06-ef6c4363d7d0" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="54048d80-b674-429b-ae1c-5e1843c6366d" name="Usuario" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="35c66ed6-421e-4f10-b308-e9b99bfb5e69" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="314e69f5-cbe3-4906-87b1-5bb39afc6d86" />
+          </association>
+        </targetEnds>
+        <additions>
+          <include Id="136459b8-127e-4caf-80aa-653f490dc5fe">
+            <useCaseMoniker Id="208e304a-f868-4e7b-ace6-b82fb12da3e5" LastKnownName="Crear Agenda de servicios" />
+            <elementDefinition Id="06ccf251-fff8-41fe-9a64-5b35e9d88bb1" />
+          </include>
+        </additions>
+        <subjects>
+          <subsystemMoniker Id="7dbf95c5-898d-4e40-8307-3e6988dc1281" LastKnownName="Agenda" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="f9fd30eb-18f7-48d5-b967-fe686bdd4b5d" name="Crear Factura del cliente" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="156cfdf9-6cb8-4c5b-8f1f-f705310d7a0b" />
+        <suppliersInternal>
+          <dependency Id="6f25a172-9aa4-45f8-8bb8-f5d506795241">
+            <useCaseMoniker Id="611bf52b-9fff-42d4-a2d0-41cd6e4587e3" LastKnownName="Administrar factura del cliente" />
+            <elementDefinition Id="fa479563-87dc-4069-bc50-c9aeb95d45c8" />
+          </dependency>
+        </suppliersInternal>
+        <subjects>
+          <subsystemMoniker Id="10623d61-ca2f-4a6a-957a-bb9cca84497f" LastKnownName="Facturacion" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="611bf52b-9fff-42d4-a2d0-41cd6e4587e3" name="Administrar factura del cliente" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="cf46265b-e39b-444e-abaf-65206fea1a18" />
+        <additions>
+          <include Id="46f218e0-cda6-49ac-b54c-da1372785da1">
+            <useCaseMoniker Id="732b02f3-1b76-439f-b6a3-264c13f7435e" LastKnownName="Notificacion de facturas por vencer" />
+            <elementDefinition Id="7cce634d-d2ae-4c47-8a26-1b9f95768468" />
+          </include>
+        </additions>
+        <subjects>
+          <subsystemMoniker Id="10623d61-ca2f-4a6a-957a-bb9cca84497f" LastKnownName="Facturacion" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="609c58e8-40a6-41ba-9de7-8a516ca07a4d" name="Administracion de entrada y salida de existencias" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="a2b17810-7352-4905-b033-93fee6f0c207" />
+        <additions>
+          <include Id="30b4620f-f18f-4fe0-8bab-423adada236b">
+            <useCaseMoniker Id="8752d6d9-b0d5-453f-a47d-53a3f8e78843" LastKnownName="Notificacion de exitencias" />
+            <elementDefinition Id="4039896f-3a4b-45fa-8cf1-20df5a000f96" />
+          </include>
+        </additions>
+        <subjects>
+          <subsystemMoniker Id="48d4f9a9-fd29-46bb-aa39-abbdec0372ab" LastKnownName="Administracion de Existencias" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="2b1dd8e7-ebe0-4972-842f-1a27d112bae8" name="Logeo Administrador" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="a49f689a-f040-46ca-9b65-bf0ebc7be1b2" />
+        <suppliersInternal>
+          <dependency Id="61764c7c-56d8-4367-893a-e61f0ec0cb89">
+            <useCaseMoniker Id="611bf52b-9fff-42d4-a2d0-41cd6e4587e3" LastKnownName="Administrar factura del cliente" />
+            <elementDefinition Id="f4c29253-d670-4aca-bb32-8e7ee7480b59" />
+          </dependency>
+          <dependency Id="6b3e1982-f813-4e18-bb49-a4dd3f96e0ea">
+            <useCaseMoniker Id="2bd72572-3f02-48bc-9c39-f49aca1631a7" LastKnownName="Confirmacion de solicitud de servicio" />
+            <elementDefinition Id="12a583b2-7132-4934-bb69-2f2059fc3d64" />
+          </dependency>
+        </suppliersInternal>
+        <subjects>
+          <subsystemMoniker Id="7dbf95c5-898d-4e40-8307-3e6988dc1281" LastKnownName="Agenda" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <useCaseModelRootHasTypes>
+      <subsystem Id="48d4f9a9-fd29-46bb-aa39-abbdec0372ab" name="Administracion de Existencias" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="7c416881-b66b-4ccd-ade1-7e6cb9c182ca" />
+      </subsystem>
+    </useCaseModelRootHasTypes>
+    <packageHasNamedElement>
+      <useCase Id="acbf1cc7-a17d-4613-abbd-a8f0ef66c177" name="Logeo Administrador" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="9e14fd42-f85f-4775-88da-599a426bb9f4" />
+        <suppliersInternal>
+          <dependency Id="d0173443-0503-4dd9-b142-a6ed44eacdc3">
+            <useCaseMoniker Id="609c58e8-40a6-41ba-9de7-8a516ca07a4d" LastKnownName="Administracion de entrada y salida de existencias" />
+            <elementDefinition Id="313652c8-507e-496b-a266-2c9cbf8fc70f" />
+          </dependency>
+          <dependency Id="63fe55a2-384c-4421-971f-9ef95aa0a57c">
+            <useCaseMoniker Id="da5a0227-9d2f-4109-8a37-72b580cd460e" LastKnownName="Confirmacion de solicitud de producto" />
+            <elementDefinition Id="98dc37b3-0a46-4205-8494-828ea8ea90c6" />
+          </dependency>
+        </suppliersInternal>
+        <subjects>
+          <subsystemMoniker Id="48d4f9a9-fd29-46bb-aa39-abbdec0372ab" LastKnownName="Administracion de Existencias" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <useCaseModelRootHasTypes>
+      <useCase Id="732b02f3-1b76-439f-b6a3-264c13f7435e" name="Notificacion de facturas por vencer" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="3e4d7938-621c-4744-9b61-79072f262620" />
+        <targetEnds>
+          <association Id="5993693a-35df-46aa-a88d-9396fb40e74d" isDerived="false" sourceEndRoleName="Notificacion de facturas por vencer" targetEndRoleName="ServTesoft" isLeaf="false" isAbstract="false">
+            <actorMoniker Id="fc888944-050c-4b07-b6c8-f468c2fb1b9c" LastKnownName="ServTesoft" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="759a45d7-60ca-4f00-9977-28876bb14a1d" name="Notificacion de facturas por vencer" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="af1ff911-35a6-4088-8d36-ddd10ee1b2e8" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f76f68d8-5163-447e-a9bd-c65d7467b3a0" name="ServTesoft" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="58a3f08a-ea1c-4ae0-a3fd-42c8d45b2e6b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="4d01f7e5-d156-43f0-b912-7bdc855ca7c9" />
+          </association>
+        </targetEnds>
+        <subjects>
+          <subsystemMoniker Id="10623d61-ca2f-4a6a-957a-bb9cca84497f" LastKnownName="Facturacion" />
+        </subjects>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <packageHasNamedElement>
+      <useCase Id="8752d6d9-b0d5-453f-a47d-53a3f8e78843" name="Notificacion de exitencias" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="adb0b9f6-91ee-420a-a3ef-c753e76350a6" />
+        <targetEnds>
+          <association Id="9a79b23e-070b-4d91-92f2-9c2469bb1884" isDerived="false" sourceEndRoleName="Notificacion de esxitencias" targetEndRoleName="ServTesoft" isLeaf="false" isAbstract="false">
+            <actorMoniker Id="fc888944-050c-4b07-b6c8-f468c2fb1b9c" LastKnownName="ServTesoft" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="948bd515-e2a1-4c2e-82b6-3708c2a22178" name="Notificacion de esxitencias" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="cd0e7e88-aa65-4439-befa-49132ad5ba59" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="d00a4ec0-70bf-4fb3-bae7-e651d3a75539" name="ServTesoft" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="e3212f9c-21d7-4e62-b456-69d808fc5aa1" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="a6510166-f66f-4ea7-92c3-9c6e17322f07" />
+          </association>
+        </targetEnds>
+        <subjects>
+          <subsystemMoniker Id="48d4f9a9-fd29-46bb-aa39-abbdec0372ab" LastKnownName="Administracion de Existencias" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <useCaseModelRootHasTypes>
+      <subsystem Id="10623d61-ca2f-4a6a-957a-bb9cca84497f" name="Facturacion" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="3e00be1d-47fd-49c8-97f5-e43dc00739c7" />
+      </subsystem>
+    </useCaseModelRootHasTypes>
+    <packageHasNamedElement>
+      <useCase Id="da5a0227-9d2f-4109-8a37-72b580cd460e" name="Confirmacion de solicitud de producto" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="2e8c921a-02d4-443a-9e42-20ec99043392" />
+        <suppliersInternal>
+          <dependency Id="3bc7cfe0-58e6-40be-a429-9c23e3f0aedd">
+            <useCaseMoniker Id="7160a449-1fe0-4166-b420-9ce1f95a9743" LastKnownName="Confirmacion de venta de producto" />
+            <elementDefinition Id="d2e9efdd-2efc-44bd-aaae-a46593dddb1d" />
+          </dependency>
+        </suppliersInternal>
+        <targetEnds>
+          <association Id="e2acf084-3d4b-4e10-84a4-def10db2fe30" isDerived="false" sourceEndRoleName="Confirmar venta de producto" targetEndRoleName="Cliente Esporadico" isLeaf="false" isAbstract="false">
+            <actorMoniker Id="a6745e40-f35d-4200-a81a-a78b210fd9b8" LastKnownName="Cliente Esporadico" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="ffec50e0-2efb-4c18-8d53-e2c5fe7b5cc8" name="Confirmar venta de producto" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="9663392e-435a-484c-9ce8-f97538e4d687" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a5b26a95-069a-4dea-8072-8fe7464729bb" name="Cliente Esporadico" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="f1398f90-a85d-4495-8f5b-4f4149fc06f5" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="c463ed5d-afa7-4841-8deb-d291bc89c509" />
+          </association>
+        </targetEnds>
+        <subjects>
+          <subsystemMoniker Id="48d4f9a9-fd29-46bb-aa39-abbdec0372ab" LastKnownName="Administracion de Existencias" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="7160a449-1fe0-4166-b420-9ce1f95a9743" name="Confirmacion de venta de producto" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="313fef78-3bcf-4035-af5f-0442383aadcb" />
+        <additions>
+          <include Id="ca86183c-6dc4-4a32-b80e-3461d4352c79">
+            <useCaseMoniker Id="609c58e8-40a6-41ba-9de7-8a516ca07a4d" LastKnownName="Administracion de entrada y salida de existencias" />
+            <elementDefinition Id="557349af-a662-4f10-b3e2-8686fadfc99f" />
+          </include>
+          <include Id="ed7ef996-336f-4628-a5cf-1e9427d09269">
+            <useCaseMoniker Id="f9fd30eb-18f7-48d5-b967-fe686bdd4b5d" LastKnownName="Crear Factura del cliente" />
+            <elementDefinition Id="561c3818-03b2-416b-8a3c-a26c02e0e273" />
+          </include>
+        </additions>
+        <subjects>
+          <subsystemMoniker Id="48d4f9a9-fd29-46bb-aa39-abbdec0372ab" LastKnownName="Administracion de Existencias" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="acfe063e-0ff0-4cad-a644-c5faaddff449" name="ProyectoSENA">
+    <elementDefinition Id="6fb923b1-ee3e-4dd6-8f34-47e49f5a5b5f" />
+    <profileInstances>
+      <packageHasProfileInstances Id="16078aca-ac1e-4663-af10-593ba6cde147">
+        <profileInstance Id="fd78095b-40a3-411b-9c31-afb6691d6278" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="e62576db-16e3-4d27-b4ad-e6b37ba70c10">
+        <profileInstance Id="a4e5b9ec-5e17-4b25-b844-22942a533d75" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</useCaseModelRoot>
