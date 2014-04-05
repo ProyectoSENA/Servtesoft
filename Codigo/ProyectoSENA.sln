@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "ProyectoSENA", "ProyectoSENA\ProyectoSENA.modelproj", "{CC597053-A2A4-4C3C-B4F4-6A131B0C8CE9}"
+Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "ProyectoSENA", "ProyectoSENA.modelproj", "{CC597053-A2A4-4C3C-B4F4-6A131B0C8CE9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
