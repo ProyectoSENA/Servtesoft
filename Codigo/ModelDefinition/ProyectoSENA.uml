@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel"
   dslVersion="1.0.0.0"
   Id="6fb923b1-ee3e-4dd6-8f34-47e49f5a5b5f"
   name="ProyectoSENA" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -407,6 +407,84 @@
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
+          <association
+            Id="85e342a4-4e99-44c8-bd31-b854da4dac47"
+            isDerived="false"
+            sourceEndRoleName="ServTesoft"
+            targetEndRoleName="Consultar gastos"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="03eb1352-a6d8-4d77-be8d-13b4683b8c2f"
+              LastKnownName="Consultar gastos"
+              LastKnownLocation="ProyectoSENA.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="2d578ea3-2f8f-4e3d-b170-1cca9906203e"
+                  name="ServTesoft"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="4eaaf79c-8994-40de-a774-fef795359773"
+                  name="Consultar gastos"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="e9d7d022-d7fc-490d-9df0-3236390b8d75"
+            isDerived="false"
+            sourceEndRoleName="ServTesoft"
+            targetEndRoleName="Registro de gastos"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="0e357f37-1cfa-4523-a92b-09e2b3fcd36f"
+              LastKnownName="Registro de gastos"
+              LastKnownLocation="ProyectoSENA.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="8f28955a-410b-429b-ae92-c4da8cb602a7"
+                  name="ServTesoft"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="42703db1-3fd6-48c7-bc6b-49746e78bc35"
+                  name="Registro de gastos"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
         </targetEnds>
       </actor>
     </packageHasNamedElement>
@@ -519,6 +597,13 @@
               LastKnownName="Administrar factura del cliente"
               LastKnownLocation="ProyectoSENA.uml" />
           </dependency>
+          <dependency
+            Id="b2aa10d1-67c9-4660-ab26-5447dacc4461">
+            <useCaseMoniker
+              Id="320bef98-052f-42d3-8faa-4f104f831ae7"
+              LastKnownName="Ingreso Ventas"
+              LastKnownLocation="ProyectoSENA.uml" />
+          </dependency>
         </suppliersInternal>
         <subjects>
           <subsystemMoniker
@@ -581,6 +666,29 @@
         name="Administracion de entrada y salida de existencias"
         isAbstract="false"
         isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="630a6b78-9aa7-4f36-a116-72c08850b89f">
+            <useCaseMoniker
+              Id="62f8f143-9f4d-4b61-b5e7-1f95649287dd"
+              LastKnownName="Ingreso nuevo producto"
+              LastKnownLocation="ProyectoSENA.uml" />
+          </dependency>
+          <dependency
+            Id="268fbf91-a107-4e78-a5da-bf5fbc7bc3b1">
+            <useCaseMoniker
+              Id="1995c2da-1506-450b-94b4-7f1223a13fb1"
+              LastKnownName="Salida producto"
+              LastKnownLocation="ProyectoSENA.uml" />
+          </dependency>
+          <dependency
+            Id="aa70c078-e176-48db-bd79-dee386eebf84">
+            <useCaseMoniker
+              Id="62f8f143-9f4d-4b61-b5e7-1f95649287dd"
+              LastKnownName="Ingreso nuevo producto"
+              LastKnownLocation="ProyectoSENA.uml" />
+          </dependency>
+        </suppliersInternal>
         <additions>
           <include
             Id="4039896f-3a4b-45fa-8cf1-20df5a000f96">
@@ -881,6 +989,184 @@
           <subsystemMoniker
             Id="7c416881-b66b-4ccd-ade1-7e6cb9c182ca"
             LastKnownName="Administracion de Existencias"
+            LastKnownLocation="ProyectoSENA.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="7319afcc-9d70-4b6a-b14c-2c3526d814fb"
+        name="Actor1"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <subsystem
+        Id="cf908559-898e-422f-a1d5-7f573c9cef77"
+        name="Subsystem1"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="97b7394b-c2b8-435e-bce2-c65a38e5bc4e"
+        name="Actor2"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="85216639-05f8-4680-9df7-af68591a754a"
+        name="UseCase3"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="03eb1352-a6d8-4d77-be8d-13b4683b8c2f"
+        name="Consultar gastos"
+        isAbstract="false"
+        isLeaf="false">
+        <subjects>
+          <subsystemMoniker
+            Id="cf908559-898e-422f-a1d5-7f573c9cef77"
+            LastKnownName="Subsystem1"
+            LastKnownLocation="ProyectoSENA.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="c69e59a8-0c11-4e46-9cb4-53547bce0716"
+        name="UseCase5"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="6dc57589-0925-4de7-a42f-05456f5cdc19"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="0e357f37-1cfa-4523-a92b-09e2b3fcd36f"
+        name="Registro de gastos"
+        isAbstract="false"
+        isLeaf="false">
+        <additions>
+          <include
+            Id="d2e1573f-e013-4b87-bf74-92876cf6a697">
+            <useCaseMoniker
+              Id="9c8cf5da-8171-4d60-a690-7c4361878571"
+              LastKnownName="Creacion reportes"
+              LastKnownLocation="ProyectoSENA.uml" />
+          </include>
+        </additions>
+        <subjects>
+          <subsystemMoniker
+            Id="cf908559-898e-422f-a1d5-7f573c9cef77"
+            LastKnownName="Subsystem1"
+            LastKnownLocation="ProyectoSENA.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="180d0544-72c1-41b4-a535-bc2e9510f6ec"
+        name="UseCase8"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="62f8f143-9f4d-4b61-b5e7-1f95649287dd"
+        name="Ingreso nuevo producto"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="c656db36-b175-4f2d-9aa9-c487f29c7b2a">
+            <useCaseMoniker
+              Id="a2b17810-7352-4905-b033-93fee6f0c207"
+              LastKnownName="Administracion de entrada y salida de existencias"
+              LastKnownLocation="ProyectoSENA.uml" />
+          </dependency>
+        </suppliersInternal>
+        <additions>
+          <include
+            Id="dd26a2f1-bc16-469b-8d9a-807f1c9ec1e5">
+            <useCaseMoniker
+              Id="0e357f37-1cfa-4523-a92b-09e2b3fcd36f"
+              LastKnownName="Registro de gastos"
+              LastKnownLocation="ProyectoSENA.uml" />
+          </include>
+        </additions>
+        <subjects>
+          <subsystemMoniker
+            Id="7c416881-b66b-4ccd-ade1-7e6cb9c182ca"
+            LastKnownName="Administracion de Existencias"
+            LastKnownLocation="ProyectoSENA.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="1995c2da-1506-450b-94b4-7f1223a13fb1"
+        name="Salida producto"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="79985313-449e-48fc-837c-a0e528667b2e">
+            <useCaseMoniker
+              Id="a2b17810-7352-4905-b033-93fee6f0c207"
+              LastKnownName="Administracion de entrada y salida de existencias"
+              LastKnownLocation="ProyectoSENA.uml" />
+          </dependency>
+        </suppliersInternal>
+        <subjects>
+          <subsystemMoniker
+            Id="7c416881-b66b-4ccd-ade1-7e6cb9c182ca"
+            LastKnownName="Administracion de Existencias"
+            LastKnownLocation="ProyectoSENA.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="320bef98-052f-42d3-8faa-4f104f831ae7"
+        name="Ingreso Ventas"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="901a1344-f7d7-4284-af0c-e68b669397c6">
+            <useCaseMoniker
+              Id="9c8cf5da-8171-4d60-a690-7c4361878571"
+              LastKnownName="Creacion reportes"
+              LastKnownLocation="ProyectoSENA.uml" />
+          </dependency>
+        </suppliersInternal>
+        <subjects>
+          <subsystemMoniker
+            Id="cf908559-898e-422f-a1d5-7f573c9cef77"
+            LastKnownName="Subsystem1"
+            LastKnownLocation="ProyectoSENA.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="9c8cf5da-8171-4d60-a690-7c4361878571"
+        name="Creacion reportes"
+        isAbstract="false"
+        isLeaf="false">
+        <subjects>
+          <subsystemMoniker
+            Id="cf908559-898e-422f-a1d5-7f573c9cef77"
+            LastKnownName="Subsystem1"
             LastKnownLocation="ProyectoSENA.uml" />
         </subjects>
       </useCase>

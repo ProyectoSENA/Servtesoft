@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="ea717dc6-f1ba-4802-869a-44ea7f19fbd5" name="ServTesoft" linkedPackageId="acfe063e-0ff0-4cad-a644-c5faaddff449" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="ea717dc6-f1ba-4802-869a-44ea7f19fbd5" name="ServTesoft" linkedPackageId="acfe063e-0ff0-4cad-a644-c5faaddff449" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
   <ownedCommentsInternal>
     <comment Id="bcd0faca-7da5-4f27-8ed4-b9323ab74938">
       <elementDefinition Id="4a27a696-a2f2-4e90-9a21-d1986d6ee65a" />
@@ -148,6 +148,38 @@
             </relationshipOwnedElementsInternal>
             <elementDefinition Id="5023e6c8-d791-462c-a6f3-5d750313bc40" />
           </association>
+          <association Id="4e834858-303b-48a9-be3e-d5c03b5538ab" isDerived="false" sourceEndRoleName="ServTesoft" targetEndRoleName="Consultar gastos" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="583d365c-675a-4e88-8cc1-bee2995e4f5c" LastKnownName="Consultar gastos" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7c9171da-977d-4b0b-9eb6-7726d41ffe84" name="ServTesoft" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="2d578ea3-2f8f-4e3d-b170-1cca9906203e" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="05e8d3a0-26ea-4d23-8dc5-07c6ea189bf6" name="Consultar gastos" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="4eaaf79c-8994-40de-a774-fef795359773" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="85e342a4-4e99-44c8-bd31-b854da4dac47" />
+          </association>
+          <association Id="ec3b7334-f074-4f79-8d40-cc9682184f10" isDerived="false" sourceEndRoleName="ServTesoft" targetEndRoleName="Registro de gastos" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="8169c996-474f-453c-9b84-40eaaf0e6b29" LastKnownName="Registro de gastos" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="87f6ce31-1e52-4bf2-bf2a-ac6851180899" name="ServTesoft" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="8f28955a-410b-429b-ae92-c4da8cb602a7" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e67ae603-3420-4f57-a841-a44dd9b51a5d" name="Registro de gastos" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="42703db1-3fd6-48c7-bc6b-49746e78bc35" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="e9d7d022-d7fc-490d-9df0-3236390b8d75" />
+          </association>
         </targetEnds>
       </actor>
     </useCaseModelRootHasTypes>
@@ -205,6 +237,10 @@
             <useCaseMoniker Id="611bf52b-9fff-42d4-a2d0-41cd6e4587e3" LastKnownName="Administrar factura del cliente" />
             <elementDefinition Id="fa479563-87dc-4069-bc50-c9aeb95d45c8" />
           </dependency>
+          <dependency Id="81e0e886-4e9b-4407-ad11-1a5a2e1812c9">
+            <useCaseMoniker Id="ab7060b6-6170-4450-ac6f-0d8bf59bcfa5" LastKnownName="Ingreso Ventas" />
+            <elementDefinition Id="b2aa10d1-67c9-4660-ab26-5447dacc4461" />
+          </dependency>
         </suppliersInternal>
         <subjects>
           <subsystemMoniker Id="10623d61-ca2f-4a6a-957a-bb9cca84497f" LastKnownName="Facturacion" />
@@ -228,6 +264,20 @@
     <packageHasNamedElement>
       <useCase Id="609c58e8-40a6-41ba-9de7-8a516ca07a4d" name="Administracion de entrada y salida de existencias" isAbstract="false" isLeaf="false">
         <elementDefinition Id="a2b17810-7352-4905-b033-93fee6f0c207" />
+        <suppliersInternal>
+          <dependency Id="14910614-8995-429b-abfa-91a7ec716d2a">
+            <useCaseMoniker Id="d51f8fa2-7a3f-43f7-a858-2106e0f6be72" LastKnownName="Ingreso nuevo producto" />
+            <elementDefinition Id="630a6b78-9aa7-4f36-a116-72c08850b89f" />
+          </dependency>
+          <dependency Id="b7772d47-af92-4e02-8f77-069bae6c3153">
+            <useCaseMoniker Id="7818ed60-b5fa-4d82-8e2d-48b7f6a1d3d0" LastKnownName="Salida producto" />
+            <elementDefinition Id="268fbf91-a107-4e78-a5da-bf5fbc7bc3b1" />
+          </dependency>
+          <dependency Id="98115fe3-a2ea-4565-a655-6217b5248ef9">
+            <useCaseMoniker Id="d51f8fa2-7a3f-43f7-a858-2106e0f6be72" LastKnownName="Ingreso nuevo producto" />
+            <elementDefinition Id="aa70c078-e176-48db-bd79-dee386eebf84" />
+          </dependency>
+        </suppliersInternal>
         <additions>
           <include Id="30b4620f-f18f-4fe0-8bab-423adada236b">
             <useCaseMoniker Id="8752d6d9-b0d5-453f-a47d-53a3f8e78843" LastKnownName="Notificacion de exitencias" />
@@ -384,6 +434,89 @@
         </additions>
         <subjects>
           <subsystemMoniker Id="48d4f9a9-fd29-46bb-aa39-abbdec0372ab" LastKnownName="Administracion de Existencias" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <useCaseModelRootHasTypes>
+      <subsystem Id="d9760e80-e75f-4fa5-93ba-869e20b187a3" name="Subsystem1" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="cf908559-898e-422f-a1d5-7f573c9cef77" />
+      </subsystem>
+    </useCaseModelRootHasTypes>
+    <packageHasNamedElement>
+      <useCase Id="583d365c-675a-4e88-8cc1-bee2995e4f5c" name="Consultar gastos" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="03eb1352-a6d8-4d77-be8d-13b4683b8c2f" />
+        <subjects>
+          <subsystemMoniker Id="d9760e80-e75f-4fa5-93ba-869e20b187a3" LastKnownName="Subsystem1" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="8169c996-474f-453c-9b84-40eaaf0e6b29" name="Registro de gastos" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="0e357f37-1cfa-4523-a92b-09e2b3fcd36f" />
+        <additions>
+          <include Id="d17c1e8b-17f0-4e32-989e-e115ef4e4741">
+            <useCaseMoniker Id="c381d4eb-5920-43c9-9877-709da127a02e" LastKnownName="Creacion reportes" />
+            <elementDefinition Id="d2e1573f-e013-4b87-bf74-92876cf6a697" />
+          </include>
+        </additions>
+        <subjects>
+          <subsystemMoniker Id="d9760e80-e75f-4fa5-93ba-869e20b187a3" LastKnownName="Subsystem1" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="d51f8fa2-7a3f-43f7-a858-2106e0f6be72" name="Ingreso nuevo producto" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="62f8f143-9f4d-4b61-b5e7-1f95649287dd" />
+        <suppliersInternal>
+          <dependency Id="a7ad1b97-0793-4709-bf83-57f2527b6e21">
+            <useCaseMoniker Id="609c58e8-40a6-41ba-9de7-8a516ca07a4d" LastKnownName="Administracion de entrada y salida de existencias" />
+            <elementDefinition Id="c656db36-b175-4f2d-9aa9-c487f29c7b2a" />
+          </dependency>
+        </suppliersInternal>
+        <additions>
+          <include Id="118f2642-9374-4bc9-ab7e-844628f16e23">
+            <useCaseMoniker Id="8169c996-474f-453c-9b84-40eaaf0e6b29" LastKnownName="Registro de gastos" />
+            <elementDefinition Id="dd26a2f1-bc16-469b-8d9a-807f1c9ec1e5" />
+          </include>
+        </additions>
+        <subjects>
+          <subsystemMoniker Id="48d4f9a9-fd29-46bb-aa39-abbdec0372ab" LastKnownName="Administracion de Existencias" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="7818ed60-b5fa-4d82-8e2d-48b7f6a1d3d0" name="Salida producto" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="1995c2da-1506-450b-94b4-7f1223a13fb1" />
+        <suppliersInternal>
+          <dependency Id="6160d1a4-0fc7-4855-a650-2d1884a2d4a7">
+            <useCaseMoniker Id="609c58e8-40a6-41ba-9de7-8a516ca07a4d" LastKnownName="Administracion de entrada y salida de existencias" />
+            <elementDefinition Id="79985313-449e-48fc-837c-a0e528667b2e" />
+          </dependency>
+        </suppliersInternal>
+        <subjects>
+          <subsystemMoniker Id="48d4f9a9-fd29-46bb-aa39-abbdec0372ab" LastKnownName="Administracion de Existencias" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="ab7060b6-6170-4450-ac6f-0d8bf59bcfa5" name="Ingreso Ventas" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="320bef98-052f-42d3-8faa-4f104f831ae7" />
+        <suppliersInternal>
+          <dependency Id="6cbbc285-74c3-4c61-affe-b3d7ddaca3ed">
+            <useCaseMoniker Id="c381d4eb-5920-43c9-9877-709da127a02e" LastKnownName="Creacion reportes" />
+            <elementDefinition Id="901a1344-f7d7-4284-af0c-e68b669397c6" />
+          </dependency>
+        </suppliersInternal>
+        <subjects>
+          <subsystemMoniker Id="d9760e80-e75f-4fa5-93ba-869e20b187a3" LastKnownName="Subsystem1" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="c381d4eb-5920-43c9-9877-709da127a02e" name="Creacion reportes" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="9c8cf5da-8171-4d60-a690-7c4361878571" />
+        <subjects>
+          <subsystemMoniker Id="d9760e80-e75f-4fa5-93ba-869e20b187a3" LastKnownName="Subsystem1" />
         </subjects>
       </useCase>
     </packageHasNamedElement>
