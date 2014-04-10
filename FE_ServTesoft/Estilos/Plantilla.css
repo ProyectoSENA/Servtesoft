@@ -1,0 +1,15 @@
+﻿body {
+    padding:0px;
+    margin:0px;
+
+}
+
+
+div#container {
+    margin-left:5%;
+    margin-right:2%;
+    width:1104px;
+    height:2900px;
+    background-color:rgba(0, 255, 255,0.5);
+
+}
